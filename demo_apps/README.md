@@ -90,6 +90,21 @@ cd llama-recipes/llama-demo-apps
 python llama2_ec2.py
 ```
 
+## [Running LLama2 on GCP](llama2_gcp.py)
+
+This is just like the previous example, just with a few parameters changed! Run:
+```
+pip install "runhouse[sky]" transformers torch
+sky check
+```
+Make sure `sky check` says GCP is enabled. You can follow its provided instructions to install GCP dependencies and login with your Google Cloud Account. Then:
+
+```
+git clone https://github.com/facebookresearch/llama-recipes
+cd llama-recipes/llama-demo-apps
+python llama2_ec2.py
+```
+
 This will have some more initial up time to set up the EC2 instance, but if you run the same code again it'll reuse the existing cluster. The instance is managed via SkyPilot; you can run `sky down rh-a10x` to bring down the EC2 instance.
 
 ## [VideoSummary](VideoSummary.ipynb): Ask Llama2 to Summarize a YouTube Video
